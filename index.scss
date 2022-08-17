@@ -18,8 +18,9 @@ $text-issue6: #E568AC;
  }
 
  body{
-    height: 100vh;
-    overflow: scroll;
+    max-height: 100vh;
+    transition: all 700ms ease;
+    will-change: background;
  }
 
  
@@ -27,6 +28,9 @@ $text-issue6: #E568AC;
  .main{
     width:100%;
     padding:1rem;
+    max-height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y:scroll ;
  }
 
  .img-fluid{
@@ -41,7 +45,11 @@ $text-issue6: #E568AC;
     flex-direction: column;
     justify-content: center;
     position: relative;
+    scroll-snap-align: start;
     height: 100vh;
+    &:first-of-type{
+        scroll-margin-top: 1rem;
+    }
     header{
         position: absolute;
         top:0;

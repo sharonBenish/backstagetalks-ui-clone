@@ -7,13 +7,17 @@
 }
 
 body {
-  height: 100vh;
-  overflow: scroll;
+  max-height: 100vh;
+  transition: all 700ms ease;
+  will-change: background;
 }
 
 .main {
   width: 100%;
   padding: 1rem;
+  max-height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 .img-fluid {
@@ -27,7 +31,11 @@ body {
   flex-direction: column;
   justify-content: center;
   position: relative;
+  scroll-snap-align: start;
   height: 100vh;
+}
+.poster:first-of-type {
+  scroll-margin-top: 1rem;
 }
 .poster header {
   position: absolute;
