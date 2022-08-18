@@ -5,6 +5,10 @@ const issue4 = document.getElementById('issue4');
 const issue5 = document.getElementById('issue5');
 const issue6 = document.getElementById('issue6');
 const main = document.querySelector('.main');
+window.addEventListener('load', ()=>{
+    document.body.className = "issue6"
+})
+
 main.addEventListener('scroll', ()=>{
     const scrollPosition = main.scrollTop;
    if (scrollPosition >= issue1.offsetTop){

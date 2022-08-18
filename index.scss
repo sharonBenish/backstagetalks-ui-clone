@@ -19,18 +19,42 @@ $text-issue6: #E568AC;
 
  body{
     max-height: 100vh;
+    overflow: scroll;
     transition: all 700ms ease;
     will-change: background;
  }
 
- 
+ a{
+    text-decoration: none;
+    color:#fff;
+ }
 
  .main{
     width:100%;
-    padding:1rem;
+    padding:1.1rem;
     max-height: 100vh;
-    scroll-snap-type: y mandatory;
     overflow-y:scroll ;
+    scroll-snap-type: y proximity;
+    .description{
+        scroll-snap-align: center;
+        color:#251d20;
+        text-align: center;
+        font-weight: bold;
+        font-size:18px;
+        line-height: 25px;
+        .copyright{
+            font-size: 12px;
+            font-weight: normal;
+        }
+        a{
+            color: inherit;
+            text-decoration: underline;
+        }
+        .contact{
+            text-decoration: none;
+            display:block;
+        }
+    }
  }
 
  .img-fluid{
@@ -47,8 +71,9 @@ $text-issue6: #E568AC;
     position: relative;
     scroll-snap-align: start;
     height: 100vh;
+    scroll-margin-top:-2px;
     &:first-of-type{
-        scroll-margin-top: 1rem;
+        scroll-margin-top: 1.1rem;
     }
     header{
         position: absolute;
@@ -69,11 +94,27 @@ $text-issue6: #E568AC;
     }
     .poster-info{
         text-align: center;
+        p{
+            color: #251d20;
+            font-size: 15px;
+            margin-bottom: 18px;
+            font-weight: bold;
+            line-height: 25px;
+        }
+        .issue{
+            font-size: 18px;
+            line-height: 25px;
+        }
     }
+    
  }
+
 
 body.issue6{
     background-color:$bg-issue6 ;
+    a{
+        color:$text-issue6;
+    }
 }
 body.issue5{
     background-color:$bg-issue5 ;
@@ -89,4 +130,14 @@ body.issue2{
 }
 body.issue1{
     background-color:$bg-issue1 ;
+}
+
+@media (min-width:1000px) {
+    .main{
+        scroll-snap-type: y mandatory;
+        
+     }
+     .poster {
+        scroll-snap-align: start;
+     }
 }
